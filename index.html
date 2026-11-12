@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TaskFlow - Sustav za agilno upravljanje IT projektima i zadacima putem Kanban ploče.">
+    <title>TaskFlow | Početna i Kanban ploča</title>
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Glavna navigacija">
+            <div>
+                <a href="index.html" aria-label="TaskFlow početna stranica">
+                    <strong>TaskFlow</strong>
+                </a>
+                <button type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Otvori ili zatvori navigacijski izbornik">
+                    Izbornik
+                </button>
+            </div>
+            <ul id="primary-navigation">
+                <li><a href="index.html" aria-current="page">Kanban ploča</a></li>
+                <li><a href="admin.html">Upravljanje i aktivnosti</a></li>
+                <li><a href="login.html">Prijava</a></li>
+                <li><a href="register.html">Registracija</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="hero-heading">
+            <h1 id="hero-heading">Organizirajte razvojne sprintove bez kaosa</h1>
+            <p>
+                Pratite napredak svog inženjerskog tima u stvarnom vremenu. Kreirajte zadatke, 
+                dodijelite prioritete i nadzirite isporuku softverskih funkcionalnosti kroz jedinstvenu Kanban ploču.
+            </p>
+            <div>
+                <a href="admin.html">Kreiraj novi zadatak</a>
+                <a href="register.html">Pridruži se timu</a>
+            </div>
+        </section>
+
+        <div>
+            <section aria-labelledby="kanban-heading">
+                <header>
+                    <h2 id="kanban-heading">Aktivni sprint: Q4 Nadogradnja sustava</h2>
+                    <p>Pregled trenutnog stanja zadataka po fazama izrade.</p>
+                </header>
+
+                <div>
+                    <!-- Stupac 1: To Do -->
+                    <section aria-labelledby="col-todo">
+                        <header>
+                            <h3 id="col-todo">To Do (Za napraviti) <span>(2)</span></h3>
+                        </header>
+
+                        <article aria-labelledby="task-101">
+                            <header>
+                                <span aria-label="Prioritet: Visok">Visok prioritet</span>
+                                <h4 id="task-101">Implementacija JWT autentifikacije</h4>
+                            </header>
+                            <p>Potrebno je konfigurirati generiranje i validaciju pristupnih i refresh tokena na backend API-ju.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Ivan Horvat</strong></p>
+                                <p>Rok: <time datetime="2026-11-20">20. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+
+                        <article aria-labelledby="task-102">
+                            <header>
+                                <span aria-label="Prioritet: Srednji">Srednji prioritet</span>
+                                <h4 id="task-102">Optimizacija SQL upita za izvještaje</h4>
+                            </header>
+                            <p>Dodati indekse na tablicu aktivnosti kako bi se ubrzalo dohvaćanje povijesti promjena po projektu.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Petra Kovačić</strong></p>
+                                <p>Rok: <time datetime="2026-11-25">25. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+                    </section>
+
+                    <!-- Stupac 2: In Progress -->
+                    <section aria-labelledby="col-progress">
+                        <header>
+                            <h3 id="col-progress">In Progress (U tijeku) <span>(2)</span></h3>
+                        </header>
+
+                        <article aria-labelledby="task-103">
+                            <header>
+                                <span aria-label="Prioritet: Visok">Visok prioritet</span>
+                                <h4 id="task-103">Dizajn relacijske sheme baze podataka</h4>
+                            </header>
+                            <p>Modeliranje tablica za korisnike, uloge, projekte, zadatke i evidenciju aktivnosti u PostgreSQL sustavu.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Ana Marić</strong></p>
+                                <p>Rok: <time datetime="2026-11-15">15. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+
+                        <article aria-labelledby="task-104">
+                            <header>
+                                <span aria-label="Prioritet: Nizak">Nizak prioritet</span>
+                                <h4 id="task-104">Priprema React strukture komponenti</h4>
+                            </header>
+                            <p>Definiranje hijerarhije komponenti za kartice zadataka i navigacijsku traku prema HTML5 predlošku.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Luka Babić</strong></p>
+                                <p>Rok: <time datetime="2026-11-18">18. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+                    </section>
+
+                    <!-- Stupac 3: Done -->
+                    <section aria-labelledby="col-done">
+                        <header>
+                            <h3 id="col-done">Done (Završeno) <span>(2)</span></h3>
+                        </header>
+
+                        <article aria-labelledby="task-105">
+                            <header>
+                                <span aria-label="Prioritet: Visok">Visok prioritet</span>
+                                <h4 id="task-105">Izrada semantičke HTML5 arhitekture (KV1)</h4>
+                            </header>
+                            <p>Kreirani svi temeljni dokumenti aplikacije uz poštivanje W3C standarda i WAI-ARIA smjernica pristupačnosti.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Luka Babić</strong></p>
+                                <p>Završeno: <time datetime="2026-11-10">10. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+
+                        <article aria-labelledby="task-106">
+                            <header>
+                                <span aria-label="Prioritet: Srednji">Srednji prioritet</span>
+                                <h4 id="task-106">Inicijalizacija Git repozitorija i pravila grananja</h4>
+                            </header>
+                            <p>Postavljena struktura grana (main, develop, feature) te definirana pravila za pregled koda prije spajanja.</p>
+                            <footer>
+                                <p>Odgovorna osoba: <strong>Ivan Horvat</strong></p>
+                                <p>Završeno: <time datetime="2026-11-08">8. studenoga 2026.</time></p>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </section>
+
+            <!-- Bočni panel: Activity Log -->
+            <aside aria-labelledby="activity-log-heading">
+                <header>
+                    <h2 id="activity-log-heading">Activity Log (Nedavne aktivnosti)</h2>
+                </header>
+                <ul>
+                    <li>
+                        <p><strong>Luka Babić</strong> je premjestio zadatak <em>Izrada semantičke HTML5 arhitekture (KV1)</em> u stupac <strong>Done</strong>.</p>
+                        <small><time datetime="2026-11-12T14:30">Prije 45 minuta</time></small>
+                    </li>
+                    <li>
+                        <p><strong>Ana Marić</strong> je preuzela zadatak <em>Dizajn relacijske sheme baze podataka</em> i promijenila status u <strong>In Progress</strong>.</p>
+                        <small><time datetime="2026-11-12T11:15">Danas u 11:15</time></small>
+                    </li>
+                    <li>
+                        <p><strong>Marko Novak (Voditelj projekta)</strong> je kreirao novi zadatak <em>Implementacija JWT autentifikacije</em>.</p>
+                        <small><time datetime="2026-11-11T16:40">Jučer u 16:40</time></small>
+                    </li>
+                    <li>
+                        <p><strong>Petra Kovačić</strong> je ažurirala rok izvršenja za zadatak <em>Optimizacija SQL upita za izvještaje</em>.</p>
+                        <small><time datetime="2026-11-11T09:20">Jučer u 09:20</time></small>
+                    </li>
+                </ul>
+                <footer>
+                    <a href="admin.html">Pregledaj cijelu povijest aktivnosti</a>
+                </footer>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> TaskFlow — Sustav za upravljanje projektima. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prijava u sustav TaskFlow za pristup projektnim pločama i zadacima.">
+    <title>TaskFlow | Prijava korisnika</title>
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Glavna navigacija">
+            <div>
+                <a href="index.html" aria-label="TaskFlow početna stranica">
+                    <strong>TaskFlow</strong>
+                </a>
+                <button type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Otvori ili zatvori navigacijski izbornik">
+                    Izbornik
+                </button>
+            </div>
+            <ul id="primary-navigation">
+                <li><a href="index.html">Kanban ploča</a></li>
+                <li><a href="admin.html">Upravljanje i aktivnosti</a></li>
+                <li><a href="login.html" aria-current="page">Prijava</a></li>
+                <li><a href="register.html">Registracija</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="login-heading">
+            <header>
+                <h1 id="login-heading">Prijava u sustav TaskFlow</h1>
+                <p>Unesite svoje službene pristupne podatke za rad na projektima.</p>
+            </header>
+
+            <form action="index.html" method="post" aria-label="Obrazac za prijavu korisnika">
+                <fieldset>
+                    <legend>Pristupni podaci</legend>
+
+                    <div>
+                        <label for="login-email">E-mail adresa:</label>
+                        <input 
+                            type="email" 
+                            id="login-email" 
+                            name="email" 
+                            placeholder="ime.prezime@tvrtka.hr" 
+                            autocomplete="email" 
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="login-password">Lozinka:</label>
+                        <input 
+                            type="password" 
+                            id="login-password" 
+                            name="password" 
+                            placeholder="Unesite vašu lozinku" 
+                            autocomplete="current-password" 
+                            minlength="8" 
+                            required>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="remember-me" name="remember_me" value="1">
+                        <label for="remember-me">Zapamti moju prijavu na ovom uređaju</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Prijavi se</button>
+                </div>
+            </form>
+
+            <footer>
+                <p>Nemate otvoren korisnički račun? <a href="register.html">Registrirajte se u sustav</a>.</p>
+            </footer>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> TaskFlow — Sustav za upravljanje projektima. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>

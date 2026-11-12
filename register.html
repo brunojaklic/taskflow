@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registracija novih voditelja projekata i članova tima u sustav TaskFlow.">
+    <title>TaskFlow | Registracija korisnika</title>
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Glavna navigacija">
+            <div>
+                <a href="index.html" aria-label="TaskFlow početna stranica">
+                    <strong>TaskFlow</strong>
+                </a>
+                <button type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Otvori ili zatvori navigacijski izbornik">
+                    Izbornik
+                </button>
+            </div>
+            <ul id="primary-navigation">
+                <li><a href="index.html">Kanban ploča</a></li>
+                <li><a href="admin.html">Upravljanje i aktivnosti</a></li>
+                <li><a href="login.html">Prijava</a></li>
+                <li><a href="register.html" aria-current="page">Registracija</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="register-heading">
+            <header>
+                <h1 id="register-heading">Kreirajte novi korisnički račun</h1>
+                <p>Ispunite obrazac kako biste se pridružili projektnom timu ili kreirali vlastiti radni prostor.</p>
+            </header>
+
+            <form action="login.html" method="post" aria-label="Obrazac za registraciju novog korisnika">
+                <fieldset>
+                    <legend>Osobni i pristupni podaci</legend>
+
+                    <div>
+                        <label for="reg-fullname">Ime i prezime:</label>
+                        <input 
+                            type="text" 
+                            id="reg-fullname" 
+                            name="full_name" 
+                            placeholder="npr. Ivan Horvat" 
+                            autocomplete="name" 
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="reg-email">Službena e-mail adresa:</label>
+                        <input 
+                            type="email" 
+                            id="reg-email" 
+                            name="email" 
+                            placeholder="ivan.horvat@tvrtka.hr" 
+                            autocomplete="email" 
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="reg-password">Lozinka (minimalno 8 znakova):</label>
+                        <input 
+                            type="password" 
+                            id="reg-password" 
+                            name="password" 
+                            placeholder="Odaberite sigurnu lozinku" 
+                            autocomplete="new-password" 
+                            minlength="8" 
+                            required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Uloga u projektnom timu</legend>
+
+                    <div>
+                        <label for="reg-role">Odaberite primarnu ulogu:</label>
+                        <select id="reg-role" name="user_role" required>
+                            <option value="" disabled selected>-- Odaberite svoju ulogu --</option>
+                            <option value="project_manager">Voditelj projekta (kreiranje projekata, dodjela zadataka, nadzor)</option>
+                            <option value="team_member">Član tima (preuzimanje zadataka, ažuriranje statusa na Kanban ploči)</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Registriraj korisnički račun</button>
+                </div>
+            </form>
+
+            <footer>
+                <p>Već imate aktivan račun? <a href="login.html">Prijavite se ovdje</a>.</p>
+            </footer>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> TaskFlow — Sustav za upravljanje projektima. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administracijsko sučelje za dodavanje novih zadataka i pregled detaljne evidencije aktivnosti u sustavu TaskFlow.">
+    <title>TaskFlow | Upravljanje zadacima i evidencija aktivnosti</title>
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Glavna navigacija">
+            <div>
+                <a href="index.html" aria-label="TaskFlow početna stranica">
+                    <strong>TaskFlow</strong>
+                </a>
+                <button type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Otvori ili zatvori navigacijski izbornik">
+                    Izbornik
+                </button>
+            </div>
+            <ul id="primary-navigation">
+                <li><a href="index.html">Kanban ploča</a></li>
+                <li><a href="admin.html" aria-current="page">Upravljanje i aktivnosti</a></li>
+                <li><a href="login.html">Prijava</a></li>
+                <li><a href="register.html">Registracija</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <header>
+            <h1>Upravljanje projektom i nadzor aktivnosti</h1>
+            <p>Sučelje za voditelje projekata i članove tima za unos novih radnih zadataka te reviziju svih promjena u sustavu.</p>
+        </header>
+
+        <!-- Sekcija 1: Obrazac za dodavanje novog zadatka -->
+        <section aria-labelledby="new-task-heading">
+            <h2 id="new-task-heading">Dodavanje novog zadatka na Kanban ploču</h2>
+
+            <form action="admin.html" method="post" aria-label="Obrazac za kreiranje novog zadatka">
+                <fieldset>
+                    <legend>Osnovni podaci o zadatku</legend>
+
+                    <div>
+                        <label for="task-title">Naziv zadatka:</label>
+                        <input 
+                            type="text" 
+                            id="task-title" 
+                            name="task_title" 
+                            placeholder="npr. Izrada REST API krajnje točke za komentare" 
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="task-desc">Tehnički opis i kriteriji prihvaćanja:</label>
+                        <textarea 
+                            id="task-desc" 
+                            name="task_description" 
+                            rows="4" 
+                            placeholder="Detaljno opišite što je potrebno implementirati i testirati..." 
+                            required></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Klasifikacija i dodjela resursa</legend>
+
+                    <div>
+                        <label for="task-status">Početni stupac na Kanban ploči:</label>
+                        <select id="task-status" name="task_status" required>
+                            <option value="todo" selected>To Do (Za napraviti)</option>
+                            <option value="in_progress">In Progress (U tijeku)</option>
+                            <option value="done">Done (Završeno)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="task-priority">Razina prioriteta:</label>
+                        <select id="task-priority" name="task_priority" required>
+                            <option value="" disabled selected>-- Odaberite prioritet --</option>
+                            <option value="high">Visok prioritet (Kritično za sprint)</option>
+                            <option value="medium">Srednji prioritet (Standardni razvoj)</option>
+                            <option value="low">Nizak prioritet (Manja poboljšanja)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="task-assignee">Odgovorni član tima:</label>
+                        <select id="task-assignee" name="task_assignee" required>
+                            <option value="" disabled selected>-- Odaberite izvršitelja --</option>
+                            <option value="ivan_horvat">Ivan Horvat (Backend inženjer)</option>
+                            <option value="ana_maric">Ana Marić (Arhitektica baza podataka)</option>
+                            <option value="luka_babic">Luka Babić (Frontend inženjer)</option>
+                            <option value="petra_kovacic">Petra Kovačić (DevOps i QA inženjerka)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="task-deadline">Rok izvršenja:</label>
+                        <input 
+                            type="date" 
+                            id="task-deadline" 
+                            name="task_deadline" 
+                            required>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Spremi i objavi zadatak</button>
+                    <button type="reset">Poništi unos</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sekcija 2: Tablica evidencije aktivnosti -->
+        <section aria-labelledby="activity-table-heading">
+            <h2 id="activity-table-heading">Evidencija aktivnosti na projektu (Activity Log)</h2>
+            <p>Cjelokupni kronološki pregled akcija svih članova tima unutar trenutnog sprinta.</p>
+
+            <table aria-label="Tablica povijesti aktivnosti na projektu">
+                <caption>Povijest promjena na zadacima za projekt Q4 Nadogradnja sustava</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">ID zapisa</th>
+                        <th scope="col">Vrijeme događaja</th>
+                        <th scope="col">Korisnik</th>
+                        <th scope="col">Uloga</th>
+                        <th scope="col">Vrsta akcije</th>
+                        <th scope="col">Povezani zadatak</th>
+                        <th scope="col">Novi status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#ACT-405</td>
+                        <td><time datetime="2026-11-12T14:30">12.11.2026. 14:30</time></td>
+                        <td>Luka Babić</td>
+                        <td>Član tima</td>
+                        <td>Promjena stupca</td>
+                        <td>Izrada semantičke HTML5 arhitekture (KV1)</td>
+                        <td>Done</td>
+                    </tr>
+                    <tr>
+                        <td>#ACT-404</td>
+                        <td><time datetime="2026-11-12T11:15">12.11.2026. 11:15</time></td>
+                        <td>Ana Marić</td>
+                        <td>Član tima</td>
+                        <td>Preuzimanje zadatka</td>
+                        <td>Dizajn relacijske sheme baze podataka</td>
+                        <td>In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>#ACT-403</td>
+                        <td><time datetime="2026-11-11T16:40">11.11.2026. 16:40</time></td>
+                        <td>Marko Novak</td>
+                        <td>Voditelj projekta</td>
+                        <td>Kreiranje zadatka</td>
+                        <td>Implementacija JWT autentifikacije</td>
+                        <td>To Do</td>
+                    </tr>
+                    <tr>
+                        <td>#ACT-402</td>
+                        <td><time datetime="2026-11-11T09:20">11.11.2026. 09:20</time></td>
+                        <td>Petra Kovačić</td>
+                        <td>Član tima</td>
+                        <td>Izmjena roka izvršenja</td>
+                        <td>Optimizacija SQL upita za izvještaje</td>
+                        <td>To Do</td>
+                    </tr>
+                    <tr>
+                        <td>#ACT-401</td>
+                        <td><time datetime="2026-11-08T17:05">08.11.2026. 17:05</time></td>
+                        <td>Ivan Horvat</td>
+                        <td>Član tima</td>
+                        <td>Zatvaranje zadatka</td>
+                        <td>Inicijalizacija Git repozitorija i pravila grananja</td>
+                        <td>Done</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <time datetime="2026">2026</time> TaskFlow — Sustav za upravljanje projektima. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>
